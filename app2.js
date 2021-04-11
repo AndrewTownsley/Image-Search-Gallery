@@ -28,26 +28,3 @@ searchBtn.addEventListener('click', () => {
   });   
 })
 
-
-
-// const container = document.getElementById("photo-container");
-// let cardTag;
-// function getPhotos(images) {
-//    images.map(image => {
-//      cardTag = `<div class="card">
-//               <img src=${image.src.tiny} />
-//          </div>`;
-//      container.innerHTML += cardTag;
-//    })
-// }
-// fetch("https://api.pexels.com/v1/search?query=people",{
-//   headers: {
-//     Authorization: "563492ad6f91700001000001f58e6def40a2436c823881c0b23a45b7"
-//   }
-// })
-//    .then(resp => {
-//      return resp.json()
-//    })
-//    .then(data => {
-//      getPhotos(data.photos);
-//    })
