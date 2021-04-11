@@ -6,6 +6,8 @@ let card;
 
 searchBtn.addEventListener('click', () => {
 
+container.innerHTML = '';
+
   function getPhotos(images) {
     images.map(image => {
       card = `<div class="photo-card">
@@ -17,7 +19,7 @@ searchBtn.addEventListener('click', () => {
 
   fetch(`https://api.pexels.com/v1/search?query=${query.value}`, {
     headers: {
-      Authorization:  ""
+      Authorization:  "563492ad6f91700001000001f58e6def40a2436c823881c0b23a45b7"
     }
   })
   .then((response) => {
