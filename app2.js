@@ -11,7 +11,6 @@ searchBtn.addEventListener('click', () => {
       <img src=${image.src.tiny} />
     </div>`
     container.innerHTML += card;
-    console.log(card);
     })
   }
 
