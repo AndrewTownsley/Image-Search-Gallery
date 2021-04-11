@@ -63,10 +63,21 @@ h1 {
   margin: 3rem;
 }
 
+.photo-header {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .photo-card {
   cursor: pointer;
 }
 
 .photo-card img {
   width: 100%;
+}
+
+.image:hover {
+  background-image: linear-gradient(to right (rgba(0,0,0,0.3), rgba(0,0,0,0.3)));
 }
