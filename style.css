@@ -86,16 +86,24 @@ h1 {
 
 .photo-card-overlay {
   position: absolute;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0);
   color: #fff;
   transition: 0.3s ease;
   padding: 10px;
   top: 0;
-  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
   opacity: 0;
   z-index: 2;
 }
 
-.photo-card:hover .photo-card-overlay {
+.photo-card:hover  .photo-card-overlay {
   opacity: 1;
 }
+
+.photo-card .photo-card-overlay:hover {
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* -------------------------------*/

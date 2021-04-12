@@ -1,3 +1,28 @@
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+
+// CREATE AN EVENT LISTENER THAT OPENS A MODAL WHEN AN IMAGE IS CLICKED.
+// THE MODAL SHOULD BE CENTERED, AND THE AREA AROUND BE GRAYED OUT.
+// IT NEEDS A CLOSE BUTTON, AND ARROW BUTTONS THAT SWITCH TO THE NEXT IMAGE.
+
+
 const query = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
 const photoContainer = document.getElementById('photo-container');
@@ -19,8 +44,8 @@ searchBtn.addEventListener('click', () => {
       photoCard = 
       `<div class="photo-card">
       <a href=${image.url}>
-      <p class="photo-card-overlay">${image.photographer}</p>
-      <img src=${image.src.tiny} class="image" />
+      <div class="photo-card-overlay">${image.photographer}</div>
+      <img src=${image.src.tiny} class="image"/>
       </a>
       </div>`
     photoDiv.innerHTML += photoCard;
@@ -30,7 +55,7 @@ searchBtn.addEventListener('click', () => {
 
   fetch(`https://api.pexels.com/v1/search?query=${query.value}`, {
     headers: {
-      Authorization: ""
+      // Authorization: "563492ad6f91700001000001f58e6def40a2436c823881c0b23a45b7"
     }
   })
   .then((response) => {
@@ -43,26 +68,3 @@ searchBtn.addEventListener('click', () => {
     console.log(data.photos.photographer);
   })
 })
-
-
-// const image = document.getElementById('image');
-// image.addEventListener('mouseover', () => {
-//   image.classList.add('photo-info');
-// })
-
-
-
-
-// create a div
-
-// add a class of 'photo-card'
-
-// create an img
-
-// add img to 'photo-card' div
-
-// append div to 'main'
-
-
-
-
