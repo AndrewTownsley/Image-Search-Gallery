@@ -22,6 +22,13 @@
 // THE MODAL SHOULD BE CENTERED, AND THE AREA AROUND BE GRAYED OUT.
 // IT NEEDS A CLOSE BUTTON, AND ARROW BUTTONS THAT SWITCH TO THE NEXT IMAGE.
 
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
+// Enter button should trigger search from Input Field...
+
 
 const query = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
@@ -34,9 +41,11 @@ const photoDiv = document.createElement('div');
 photoDiv.classList.add('photo-container');
 main.appendChild(photoDiv);
 
-searchBtn.addEventListener('click', () => {
-  
-  photoHeader.innerText = `"${query.value}" Photos`;
+
+searchBtn.addEventListener('click', (e) => {
+
+  e.preventDefault();
+  photoHeader.innerText = `"${query.value}"`;
   photoDiv.innerHTML = '';
 
   function getPhotos(images) {
@@ -45,26 +54,24 @@ searchBtn.addEventListener('click', () => {
       `<div class="photo-card">
       <a href=${image.url}>
       <div class="photo-card-overlay">${image.photographer}</div>
-      <img src=${image.src.tiny} class="image"/>
+      <img src=${image.src.tiny} alt=${query.value} class="image"/>
       </a>
       </div>`
     photoDiv.innerHTML += photoCard;
-    console.log(image.photographer);
     })
   }
 
   fetch(`https://api.pexels.com/v1/search?query=${query.value}`, {
     headers: {
-      Authorization: ""
+      Authorization: "563492ad6f91700001000001f58e6def40a2436c823881c0b23a45b7"
     }
   })
   .then((response) => {
-    console.log(response);
     return response.json();
   })
   .then(data => {
     getPhotos(data.photos)
     console.log(data.photos);
-    console.log(data.photos.photographer);
   })
 })
+

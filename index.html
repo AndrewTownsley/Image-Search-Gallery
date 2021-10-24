@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API-practice app</title>
+  <title>JS-gallery</title>
   <script src="app.js" defer></script>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,16 +12,27 @@
   
 
   <div class="header-container">
-      <h1>Find Photos to Enhance your Creative Project</h1>
-    <div class="search-container">
-      <label for="search">Powered by <a href="https://www.pexels.com">Pexels</a></label>
-      <input type="text" id="search" placeholder="Nature, Art, People, Travel...">
-      <button class="search-btn" id="searchBtn">Get Photos</button>
-    </div>
+    <h1>PhotoPhind</h1>
+      <h5>Find Photos to Enhance your Creative Project</h5>
+    <form class="search-container">
+      <div class="search-element-height">
+        <input type="text" id="search" placeholder="Nature, Art, Travel...">
+        <button class="search-btn" id="searchBtn">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="34" height="34"
+          viewBox="0 0 24 24"
+          style=" fill:#777;">    <path d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z"></path></svg>  
+        </button>
+        <span><label for="search">Powered by <a href="https://www.pexels.com">Pexels</a></label></span>
+        </div>
+    </form>
   </div>
 
   <div class="main" id="main">
     <h2 class="photo-header" id="photo-header"></h2>
+
+  </div>
+  <div id="img-modal" class="img-modal">
 
   </div>
   
