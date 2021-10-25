@@ -33,6 +33,23 @@ h5 {
   color: #999;
 }
 
+.btn {
+  background-color: #00e5b0;
+  padding: 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: #333;
+  transition: all 0.2s ease;
+  width: 120px;
+  margin: 0 auto 2rem auto;
+}
+
+.btn:hover {
+  background-color: #1effcb;
+}
 /* -------------------------------------------------HEADER */
 
 .header-container {
