@@ -7,6 +7,14 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #222;
+  color: #fff;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -17,9 +25,14 @@ h1 {
   color: #fff;
 }
 
+h2 {
+  font-size: 1.5rem;
+}
+
 h5 {
   color: #999;
 }
+
 /* -------------------------------------------------HEADER */
 
 .header-container {
@@ -43,6 +56,7 @@ h5 {
 .search-container label {
   display: block;
   padding-left: 10px;
+  padding-top: 20px;
   font-size: 16px;
   color: #fff;
 }
@@ -54,6 +68,10 @@ h5 {
   min-width: 280px;
   border-radius: 20px;
   border: none;
+}
+
+.search-container input:focus {
+  outline: 4px solid #00e5b0;
 }
 
 .search-btn {
@@ -75,36 +93,17 @@ h5 {
   cursor: pointer;
 }
 
-@media (max-width: 525px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-  .header-container {
-    padding: 0.5rem 0.8rem;
-  }
-  .search-element-height {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-  }
-
-  .search-container input {
-    height: 40px;
-  }
-}
-
 /* ---------------------------------------PHOTO-CONTAINER-GRID */
 
 .photo-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 1rem;
   margin: 3rem;
 }
 
 .photo-header {
   color: #fff;
-  font-size: 2rem;
   text-align: center;
   margin-top: 2rem;
 }
@@ -145,18 +144,34 @@ h5 {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* -----------IMG-Modal--------------------*/
+/* ----------------------------------Media Queries */
 
-.img-modal {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: none;
-}
+@media (max-width: 525px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .header-container {
+    padding: 0.5rem 0.8rem;
+  }
+  .search-element-height {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+  .search-container label {
+    padding-top: 0;
+  }
 
-.img-modal.active {
-  display: block;
+  .search-container input {
+    height: 40px;
+  }
+
+  .photo-header {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .photo-container {
+    margin: 1rem 10px;
+  }
 }
