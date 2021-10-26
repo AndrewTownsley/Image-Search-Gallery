@@ -10,13 +10,6 @@ body {
   color: #fff;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 a {
   color: #fff;
 }
@@ -46,6 +39,10 @@ h5 {
 .btn:hover {
   background-color: #1effcb;
 }
+
+.btn:focus {
+  outline: 3px solid #fff;
+}
 /* -------------------------------------------------HEADER */
 
 .header-container {
@@ -66,7 +63,7 @@ h5 {
   height: 40px;
 }
 
-.search-container label {
+.search-container span {
   display: block;
   padding-left: 10px;
   padding-top: 20px;
@@ -157,6 +154,13 @@ h5 {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+.load-more-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
 /* ----------------------------------Media Queries */
 
 @media (max-width: 525px) {
@@ -171,7 +175,7 @@ h5 {
     align-items: flex-start;
     height: auto;
   }
-  .search-container label {
+  .search-container span {
     padding-top: 0;
   }
 
