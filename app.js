@@ -1,4 +1,3 @@
-
 const queryInput = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
 const photoContainer = document.getElementById('photo-container');
@@ -26,13 +25,10 @@ const fetchCuratedPhotos = async (pageNum) => {
      },
    });
    const response = await data.json();
-   console.log("curated Photos:",response);
    getPhotos(response);
 }
 
-
 function getPhotos(response) {
-  console.log(response);
   response.photos.map(image => {
     photoCard = 
     `<div class="photo-card">
@@ -53,12 +49,8 @@ const searchPhotos = async (pageNum) => {
     },
   });
   const response = await data.json();
-  console.log("search Photos:", response);
   getPhotos(response);
 }
-
-
-
 
 searchBtn.addEventListener('click', (e) => {
 
@@ -67,7 +59,6 @@ searchBtn.addEventListener('click', (e) => {
   search = true;
   photoHeader.innerText = `'${queryInput.value}'`;
   photoDiv.innerHTML = '';
-
 
   fetch(`https://api.pexels.com/v1/search?query=${queryInput.value}&page=${pageNum}`, {
     headers: {
@@ -88,7 +79,7 @@ loadMoreBtn.addEventListener('click', () => {
     if(queryInput.value === "")
     return;
     pageNum++
-    searchPhotos(queryInput, pageNum);
+    searchPhotos(pageNum);
   }
 })
 
