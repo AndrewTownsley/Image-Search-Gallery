@@ -61,6 +61,7 @@ const searchPhotos = async (pageNum) => {
   });
   const response = await data.json();
   getPhotos(response);
+  photoHeader.innerText = `'${queryInput.value}' Search Results`;
 }
 
 searchBtn.addEventListener('click', (e) => {
@@ -71,7 +72,7 @@ searchBtn.addEventListener('click', (e) => {
 
     let query = e.target.value;
     search = true;
-    photoHeader.innerText = `'${queryInput.value}' Search Results`;
+    photoHeader.innerText = `Loading Images...`;
     photoDiv.innerHTML = '';
     
     fetch(`https://api.pexels.com/v1/search?query=${queryInput.value}&page=${pageNum}`, {
@@ -83,6 +84,7 @@ searchBtn.addEventListener('click', (e) => {
       return response.json();
     })
     searchPhotos(query, pageNum);
+    loadMoreBtn.classList.toggle('hide');
   }
   })
   
