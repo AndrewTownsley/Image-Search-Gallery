@@ -11,14 +11,18 @@ const photoDiv = document.createElement('div');
 photoDiv.classList.add('photo-container');
 main.appendChild(photoDiv);
 
+const loading = document.createElement('h1');
+loading.classList.add('loading');
+loading.innerText = 'Loading Images...';
+photoHeader.appendChild(loading);
+
 const loadBtnDiv = document.createElement('div');
 loadBtnDiv.classList.add('load-more-div');
 main.appendChild(loadBtnDiv);
 
-
 const loadMoreBtn = document.createElement('button');
 loadMoreBtn.classList.add('load-btn');
-loadMoreBtn.classList.add('btn');
+loadMoreBtn.classList.add('btn', 'hide');
 loadMoreBtn.innerText = 'Load More'
 loadBtnDiv.appendChild(loadMoreBtn);
 
@@ -44,6 +48,8 @@ function getPhotos(response) {
     </div>`
   photoDiv.innerHTML += photoCard;
   })
+  loading.classList.toggle('hide');
+  loadMoreBtn.classList.toggle('hide');
 }
 
 const searchPhotos = async (pageNum) => {
@@ -65,7 +71,7 @@ searchBtn.addEventListener('click', (e) => {
 
     let query = e.target.value;
     search = true;
-    photoHeader.innerText = `'${queryInput.value}'`;
+    photoHeader.innerText = `'${queryInput.value}' Search Results`;
     photoDiv.innerHTML = '';
     
     fetch(`https://api.pexels.com/v1/search?query=${queryInput.value}&page=${pageNum}`, {

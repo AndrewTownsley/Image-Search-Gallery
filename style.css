@@ -161,6 +161,17 @@ h5 {
   margin-bottom: 2rem;
 }
 
+.loading {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #00e5b0;
+}
+
+.hide {
+  display: none;
+}
+
 /* ----------------------------------Media Queries */
 
 @media (max-width: 525px) {
