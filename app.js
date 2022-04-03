@@ -43,7 +43,11 @@ function getPhotos(response) {
     `<div class="photo-card">
     <a href=${image.url}>
     <div class="photo-card-overlay">${image.photographer}</div>
-    <img src=${image.src.tiny} class="image" alt=${image.alt}/>
+    <img 
+      src=${image.src.medium} 
+      class="image" 
+      alt=${image.alt}
+    />
     </a>
     </div>`
   photoDiv.innerHTML += photoCard;
